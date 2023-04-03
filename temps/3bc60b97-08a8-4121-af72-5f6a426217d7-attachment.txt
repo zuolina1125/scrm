@@ -1,0 +1,10 @@
+INFO     log:logging_util.py:78 ----------------接口测试开始--------------------
+INFO     log:logging_util.py:78 接口名称:检查错误的账号
+INFO     log:logging_util.py:78 请求方式:post
+INFO     log:logging_util.py:78 请求路径:http://192.168.200.216/scrm/cms/login
+INFO     log:logging_util.py:78 请求json参数:{'companyId': '1', 'password': '123456', 'username': '1525566456555'}
+INFO     log:logging_util.py:78 请求头:{'Content-Type': 'application/json'}
+INFO     log:logging_util.py:78 预期结果:[{'equals': {'errorCode': -5}}, {'contains': '未找到该账号，请确认后重新输入'}]
+INFO     log:logging_util.py:78 实际结果:{'errorCode': -5, 'errorMsg': '未找到该账号，请确认后重新输入', 'data': None}
+INFO     log:logging_util.py:78 接口测试成功
+INFO     log:logging_util.py:78 ----------------接口测试结束--------------------

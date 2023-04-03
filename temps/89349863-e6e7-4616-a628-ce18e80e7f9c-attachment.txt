@@ -1,0 +1,20 @@
+INFO     log:logging_util.py:78 ----------------接口测试开始--------------------
+INFO     log:logging_util.py:78 接口名称:检查密码为空
+INFO     log:logging_util.py:78 请求方式:post
+INFO     log:logging_util.py:78 请求路径:http://192.168.200.216/scrm/cms/login
+INFO     log:logging_util.py:78 请求json参数:{'companyId': '1', 'password': '', 'username': '17740631283'}
+INFO     log:logging_util.py:78 请求头:{'Content-Type': 'application/json'}
+ERROR    log:logging_util.py:71 断言失败errorCode不等于-2
+INFO     log:logging_util.py:78 接口测试失败！！！
+INFO     log:logging_util.py:78 ----------------接口测试结束--------------------
+
+ERROR    log:logging_util.py:71 断言判断的assert_result方法异常：Traceback (most recent call last):
+  File "E:\Install\python\project\scrm_api\common\request_util.py", line 110, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "E:\Install\python\project\scrm_api\common\request_util.py", line 140, in equals_assert
+    error_log('断言失败' + assert_key + '不等于' + str(assert_value))
+  File "E:\Install\python\project\scrm_api\common\logging_util.py", line 73, in error_log
+    raise Exception(message)
+Exception: 断言失败errorCode不等于-2
+
+ERROR    log:logging_util.py:71 规范yaml的standard_yaml方法异常
