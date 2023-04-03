@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Apr 03 18:26:51 CST 2023","Mon Apr 03 18:26:51 CST 2023","26","testcase.test_scrm1_1","test_scrm_api","TestScrm","","","test_login[caseinfo3]",""
+"passed","Mon Apr 03 18:26:51 CST 2023","Mon Apr 03 18:26:51 CST 2023","21","testcase.test_scrm1_1","test_scrm_api","TestScrm","","","test_login[caseinfo2]",""
+"passed","Mon Apr 03 18:26:51 CST 2023","Mon Apr 03 18:26:51 CST 2023","22","testcase.test_scrm1_1","test_scrm_api","TestScrm","","","test_login[caseinfo1]",""
+"passed","Mon Apr 03 18:26:51 CST 2023","Mon Apr 03 18:26:51 CST 2023","145","testcase.test_scrm1_1","test_scrm_api","TestScrm","","","test_login[caseinfo4]",""
+"passed","Mon Apr 03 18:26:51 CST 2023","Mon Apr 03 18:26:51 CST 2023","220","testcase.test_scrm1_1","test_scrm_api","TestScrm","","","test_login[caseinfo0]",""

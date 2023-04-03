@@ -1,0 +1,10 @@
+# 存放基础路径
+base:
+  test_scrm: http://192.168.200.216
+  uat_scrm: https://scrmuat.yiche.com
+  formal_scrm: https://myscrm.yiche.com
+#日志配置
+log:
+  log_name: logs_
+  log_level: info
+  log_format: '[%(asctime)s] %(filename)s->%(funcName)s line:%(lineno)d [%(levelname)s] %(message)s'

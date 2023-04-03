@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/common/logging_util.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/parameterize_util.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/request_util.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/yaml_util.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/config/config.yaml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/config/extract.yaml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/conftest.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/conftest.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hotloads/randoms.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pytest.ini" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/requirements.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/run.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test_datas/test_scrm_1_1/test_login_data.yaml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/testcase/test_scrm1_1/test_login.yaml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/testcase/test_scrm1_1/test_scrm_api.py" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,21 @@
+-
+  name: $ddt{name}
+  base_url: ${read_config(base,test_scrm)}
+  parameterize:
+    name-companyId-password-username-errorCode-assert_str: /test_datas/test_scrm_1_1/test_login_data.yaml
+  request:
+    method: POST
+    url: /scrm/cms/login
+    headers:
+      Content-Type: application/json
+    json:
+      companyId: $ddt{companyId}
+      password: $ddt{password}
+      username: $ddt{username}
+  extract:
+      token: $..token
+  validate:
+#    - equals: {status_code: 200} # 相等断言
+    - equals:
+        errorCode: $ddt{errorCode}
+    - contains: $ddt{assert_str} #包含断言

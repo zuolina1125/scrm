@@ -1,0 +1,73 @@
+[2023-03-31 18:15:41,029] logging_util.py->logs line:78 [INFO] ----------------接口测试开始--------------------
+[2023-03-31 18:15:41,031] logging_util.py->logs line:78 [INFO] 接口名称:登录成功，获得token
+[2023-03-31 18:15:41,033] logging_util.py->logs line:78 [INFO] 请求方式:post
+[2023-03-31 18:15:41,033] logging_util.py->logs line:78 [INFO] 请求路径:http://192.168.200.216/scrm/cms/login
+[2023-03-31 18:15:41,033] logging_util.py->logs line:78 [INFO] 请求json参数:{'companyId': '1', 'password': '123456', 'username': '17740631283'}
+[2023-03-31 18:15:41,033] logging_util.py->logs line:78 [INFO] 请求头:{'Content-Type': 'application/json'}
+[2023-03-31 18:15:41,429] logging_util.py->logs line:78 [INFO] 预期结果:[{'equals': {'errorCode': 0}}, {'contains': 'token'}]
+[2023-03-31 18:15:41,437] logging_util.py->logs line:78 [INFO] 实际结果:{'errorCode': 0, 'errorMsg': '成功', 'data': {'id': 46, 'userName': '左利娜', 'enterpriseWeChatId': 'zuoln', 'token': 'eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NDYsImlhdCI6MTY4MDI1Nzc0MSwiZXhwIjoxNjgwMzAwOTQxfQ.we5n4O3kI4ynS8QQf-UDW07evvN45tWHQh31FbUo9-g', 'role': {'id': 4, 'roleName': '管理员(使用线索平台和外呼功能)'}, 'domainAccount': 'zuoln'}}
+[2023-03-31 18:15:41,437] logging_util.py->logs line:78 [INFO] 接口测试成功
+[2023-03-31 18:15:41,437] logging_util.py->logs line:78 [INFO] ----------------接口测试结束--------------------
+
+[2023-03-31 18:15:41,443] logging_util.py->logs line:78 [INFO] ----------------接口测试开始--------------------
+[2023-03-31 18:15:41,443] logging_util.py->logs line:78 [INFO] 接口名称:检查密码为空
+[2023-03-31 18:15:41,445] logging_util.py->logs line:78 [INFO] 请求方式:post
+[2023-03-31 18:15:41,446] logging_util.py->logs line:78 [INFO] 请求路径:http://192.168.200.216/scrm/cms/login
+[2023-03-31 18:15:41,446] logging_util.py->logs line:78 [INFO] 请求json参数:{'companyId': '1', 'password': '', 'username': '17740631283'}
+[2023-03-31 18:15:41,446] logging_util.py->logs line:78 [INFO] 请求头:{'Content-Type': 'application/json'}
+[2023-03-31 18:15:41,492] logging_util.py->error_log line:71 [ERROR] 断言失败errorCode不等于-2
+[2023-03-31 18:15:41,493] logging_util.py->logs line:78 [INFO] 接口测试失败！！！
+[2023-03-31 18:15:41,493] logging_util.py->logs line:78 [INFO] ----------------接口测试结束--------------------
+
+[2023-03-31 18:15:41,494] logging_util.py->error_log line:71 [ERROR] 断言判断的assert_result方法异常：Traceback (most recent call last):
+  File "E:\Install\python\project\scrm_api\common\request_util.py", line 110, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "E:\Install\python\project\scrm_api\common\request_util.py", line 140, in equals_assert
+    error_log('断言失败' + assert_key + '不等于' + str(assert_value))
+  File "E:\Install\python\project\scrm_api\common\logging_util.py", line 73, in error_log
+    raise Exception(message)
+Exception: 断言失败errorCode不等于-2
+
+[2023-03-31 18:15:41,494] logging_util.py->error_log line:71 [ERROR] 规范yaml的standard_yaml方法异常
+[2023-03-31 18:15:41,675] logging_util.py->logs line:78 [INFO] ----------------接口测试开始--------------------
+[2023-03-31 18:15:41,675] logging_util.py->logs line:78 [INFO] 接口名称:检查用户名为空
+[2023-03-31 18:15:41,678] logging_util.py->logs line:78 [INFO] 请求方式:post
+[2023-03-31 18:15:41,679] logging_util.py->logs line:78 [INFO] 请求路径:http://192.168.200.216/scrm/cms/login
+[2023-03-31 18:15:41,679] logging_util.py->logs line:78 [INFO] 请求json参数:{'companyId': '1', 'password': '123456', 'username': ''}
+[2023-03-31 18:15:41,679] logging_util.py->logs line:78 [INFO] 请求头:{'Content-Type': 'application/json'}
+[2023-03-31 18:15:41,700] logging_util.py->error_log line:71 [ERROR] 断言失败errorCode不等于-2
+[2023-03-31 18:15:41,700] logging_util.py->logs line:78 [INFO] 接口测试失败！！！
+[2023-03-31 18:15:41,700] logging_util.py->logs line:78 [INFO] ----------------接口测试结束--------------------
+
+[2023-03-31 18:15:41,701] logging_util.py->error_log line:71 [ERROR] 断言判断的assert_result方法异常：Traceback (most recent call last):
+  File "E:\Install\python\project\scrm_api\common\request_util.py", line 110, in assert_result
+    flag = self.equals_assert(value, sj_result, return_code)
+  File "E:\Install\python\project\scrm_api\common\request_util.py", line 140, in equals_assert
+    error_log('断言失败' + assert_key + '不等于' + str(assert_value))
+  File "E:\Install\python\project\scrm_api\common\logging_util.py", line 73, in error_log
+    raise Exception(message)
+Exception: 断言失败errorCode不等于-2
+
+[2023-03-31 18:15:41,701] logging_util.py->error_log line:71 [ERROR] 规范yaml的standard_yaml方法异常
+[2023-03-31 18:15:41,744] logging_util.py->logs line:78 [INFO] ----------------接口测试开始--------------------
+[2023-03-31 18:15:41,744] logging_util.py->logs line:78 [INFO] 接口名称:检查错误的账号
+[2023-03-31 18:15:41,747] logging_util.py->logs line:78 [INFO] 请求方式:post
+[2023-03-31 18:15:41,747] logging_util.py->logs line:78 [INFO] 请求路径:http://192.168.200.216/scrm/cms/login
+[2023-03-31 18:15:41,747] logging_util.py->logs line:78 [INFO] 请求json参数:{'companyId': '1', 'password': '123456', 'username': '1525566456555'}
+[2023-03-31 18:15:41,747] logging_util.py->logs line:78 [INFO] 请求头:{'Content-Type': 'application/json'}
+[2023-03-31 18:15:41,801] logging_util.py->logs line:78 [INFO] 预期结果:[{'equals': {'errorCode': -5}}, {'contains': '未找到该账号，请确认后重新输入'}]
+[2023-03-31 18:15:41,802] logging_util.py->logs line:78 [INFO] 实际结果:{'errorCode': -5, 'errorMsg': '未找到该账号，请确认后重新输入', 'data': None}
+[2023-03-31 18:15:41,802] logging_util.py->logs line:78 [INFO] 接口测试成功
+[2023-03-31 18:15:41,802] logging_util.py->logs line:78 [INFO] ----------------接口测试结束--------------------
+
+[2023-03-31 18:15:41,807] logging_util.py->logs line:78 [INFO] ----------------接口测试开始--------------------
+[2023-03-31 18:15:41,807] logging_util.py->logs line:78 [INFO] 接口名称:检查错误的密码
+[2023-03-31 18:15:41,809] logging_util.py->logs line:78 [INFO] 请求方式:post
+[2023-03-31 18:15:41,809] logging_util.py->logs line:78 [INFO] 请求路径:http://192.168.200.216/scrm/cms/login
+[2023-03-31 18:15:41,810] logging_util.py->logs line:78 [INFO] 请求json参数:{'companyId': '1', 'password': '1232456', 'username': '17740631283'}
+[2023-03-31 18:15:41,810] logging_util.py->logs line:78 [INFO] 请求头:{'Content-Type': 'application/json'}
+[2023-03-31 18:15:42,020] logging_util.py->logs line:78 [INFO] 预期结果:[{'equals': {'errorCode': -3}}, {'contains': '账号或密码或公司错误'}]
+[2023-03-31 18:15:42,021] logging_util.py->logs line:78 [INFO] 实际结果:{'errorCode': -3, 'errorMsg': '账号或密码或公司错误', 'data': None}
+[2023-03-31 18:15:42,021] logging_util.py->logs line:78 [INFO] 接口测试成功
+[2023-03-31 18:15:42,021] logging_util.py->logs line:78 [INFO] ----------------接口测试结束--------------------
+
