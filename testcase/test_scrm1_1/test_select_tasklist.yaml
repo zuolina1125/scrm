@@ -1,0 +1,26 @@
+-
+  name: 根据任务名称查询
+  base_url: ${read_config(base,test_scrm)}
+  request:
+    method: POST
+    url: /scrm/cms/task/getListByPage
+    headers:
+      Content-Type: application/json
+      token: ${read_extract_data(token)}
+    json:
+      {
+        "taskNum": "",
+        "taskName": '${read_extract_data(taskName)}',
+        "scrmProjectIdList": [ ],
+        "callType": "-1",
+        "taskBeginStartTime": "",
+        "taskBeginEndTime": "",
+        "taskType": "-1",
+        "taskStatus": "-1",
+        "pageIndex": "1",
+        "pageSize": 30
+      }
+  extract:
+      id: $..id
+  validate:
+    - equals: {errorCode: 0}

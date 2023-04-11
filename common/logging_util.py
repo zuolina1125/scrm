@@ -16,28 +16,28 @@ class LoggerUtil:
         if not self.logger.handlers:
             # -------文件日志-----------------
             # 1.创建文件日志路径
-            self.file_log_path = os.getcwd() + "/logs/" + read_config_yaml("log", "log_name") + str(int(time.time()))
-            print(self.file_log_path)
-            # 2.创建文件日志的控制器
-            self.file_hander = logging.FileHandler(self.file_log_path, encoding='utf-8')
-            # 3.设置文件的日志级别
-            file_log_level = str(read_config_yaml("log", "log_level")).lower()
-            if file_log_level == 'debug':
-                self.file_hander.setLevel(logging.DEBUG)
-            elif file_log_level == 'info':
-                self.file_hander.setLevel(logging.INFO)
-            elif file_log_level == 'warning':
-                self.file_hander.setLevel(logging.WARNING)
-            elif file_log_level == 'error':
-                self.file_hander.setLevel(logging.ERROR)
-            elif file_log_level == 'critical':
-                self.file_hander.setLevel(logging.CRITICAL)
-
-            # 4.设置文件日志的格式
-            self.file_hander.setFormatter(logging.Formatter(read_config_yaml("log", "log_format")))
-
-            # 5.将文件日志的控制器加入到日志对象
-            self.logger.addHandler(self.file_hander)
+            # self.file_log_path = os.getcwd() + "/logs/" + read_config_yaml("log", "log_name") + str(int(time.time()))
+            # print(self.file_log_path)
+            # # 2.创建文件日志的控制器
+            # self.file_hander = logging.FileHandler(self.file_log_path, encoding='utf-8')
+            # # 3.设置文件的日志级别
+            # file_log_level = str(read_config_yaml("log", "log_level")).lower()
+            # if file_log_level == 'debug':
+            #     self.file_hander.setLevel(logging.DEBUG)
+            # elif file_log_level == 'info':
+            #     self.file_hander.setLevel(logging.INFO)
+            # elif file_log_level == 'warning':
+            #     self.file_hander.setLevel(logging.WARNING)
+            # elif file_log_level == 'error':
+            #     self.file_hander.setLevel(logging.ERROR)
+            # elif file_log_level == 'critical':
+            #     self.file_hander.setLevel(logging.CRITICAL)
+            #
+            # # 4.设置文件日志的格式
+            # self.file_hander.setFormatter(logging.Formatter(read_config_yaml("log", "log_format")))
+            #
+            # # 5.将文件日志的控制器加入到日志对象
+            # self.logger.addHandler(self.file_hander)
 
             # -------控制台日志------------------------
 

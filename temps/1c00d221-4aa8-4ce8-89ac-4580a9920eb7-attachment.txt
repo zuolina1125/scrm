@@ -1,0 +1,10 @@
+INFO     log:logging_util.py:78 ----------------接口测试开始--------------------
+INFO     log:logging_util.py:78 接口名称:终止任务
+INFO     log:logging_util.py:78 请求方式:post
+INFO     log:logging_util.py:78 请求路径:http://192.168.200.216/scrm/cms/task/terminate
+INFO     log:logging_util.py:78 请求json参数:{'taskId': '459'}
+INFO     log:logging_util.py:78 请求头:{'Content-Type': 'application/json', 'token': 'eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NDYsImlhdCI6MTY4MDg0NTQxMSwiZXhwIjoxNjgwODg4NjExfQ.BoyqXN-_qlUHupo9Y33uFMUhyoPZTsA-oHI6ryQm2DA'}
+INFO     log:logging_util.py:78 预期结果:[{'equals': {'errorCode': 0}}]
+INFO     log:logging_util.py:78 实际结果:{'errorCode': 0, 'errorMsg': '终止任务--成功', 'data': None}
+INFO     log:logging_util.py:78 接口测试成功
+INFO     log:logging_util.py:78 ----------------接口测试结束--------------------

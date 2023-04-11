@@ -6,6 +6,7 @@ import traceback
 
 import yaml
 
+from common.logging_util import error_log
 from common.yaml_util import read_data_yaml
 
 
@@ -15,15 +16,13 @@ def read_testcase_yaml(yaml_path):
             caseinfo = yaml.load(f, Loader=yaml.FullLoader)
             if len(caseinfo) >= 2:
                 return caseinfo
+            elif 'parameterize' in dict(*caseinfo).keys():
+                new_caseinfo = ddt(*caseinfo)
+                return new_caseinfo
             else:
-                if 'parameterize' in dict(*caseinfo).keys():
-                    new_caseinfo = ddt(*caseinfo)
-                    return new_caseinfo
-                else:
-                    return caseinfo
-
+                return caseinfo
     except Exception as e:
-        print("读取测试用例read_testcase_yaml方法异常：%s" % str(traceback.format_exc()))
+        error_log("读取测试用例read_testcase_yaml方法异常：%s" % str(traceback.format_exc()))
 
 
 def ddt(caseinfo):

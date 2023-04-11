@@ -1,0 +1,39 @@
+-
+  name: 创建任务
+  base_url: ${read_config(base,test_scrm)}
+  request:
+    method: POST
+    url: /scrm/cms/task/create
+    headers:
+      Content-Type: application/json
+      token: ${read_extract_data(token)}
+    json:
+      {
+#        "taskName": "zuo${get_random_number(1000,9999)}",
+        "taskName": "zuolina222",
+        "taskBeginTime": "2023-03-16 05:05:05",
+        "taskEndTime": "2023-03-25 05:05:05",
+        "taskType": "1",
+        "scrmProjectId": "63",
+        "ccProjectId": "842",
+        "ccProjectName": "私域线索-11-1",
+        "callScriptContent": "2",
+        "customerGroups": [
+            "2",
+            "6",
+            "4"
+        ],
+        "interval": "200",
+        "doStartTime": "00:00:00",
+        "doEndTime": "03:00:00",
+        "customerType": "1",
+        "distributeUsers": [
+            50
+        ],
+        "distributeType": "1",
+        "wxScriptContent": "1"
+      }
+  extract:
+    taskName: $..taskName
+  validate:
+    - equals: {errorCode: 0}

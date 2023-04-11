@@ -41,9 +41,8 @@ class RequestsUtil:
                     new_value = getattr(self.obj, func_name)(*args_value2)
                 else:
                     new_value = getattr(self.obj, func_name)()
-
                 if isinstance(new_value, int) or isinstance(new_value, float):
-                    str_data = str_data.replace('"' + old_value + '"', str(new_value))
+                    str_data = str_data.replace(old_value, str(new_value))
                 else:
                     str_data = str_data.replace(old_value, str(new_value))
                     # 还原数据类型
@@ -72,6 +71,11 @@ class RequestsUtil:
                     return_text = res.text
                     return_code = res.status_code
                     return_json = ''
+                    request_json = cassinfo["request"]["json"]
+                    try:
+                        return_json = res.json()
+                    except Exception as e:
+                        logs("返回结果不是json格式，不能使用jsonpath")
                     if 'extract' in cassinfo_keys:
                         for key, value in cassinfo['extract'].items():
                             if '(.*?)' in value or '(.+?)' in value:
@@ -80,14 +84,15 @@ class RequestsUtil:
                                     extract_value = {key: zz_value.group(1)}
                                     write_extract_yaml(extract_value)
                             else:
-                                try:
-                                    return_json = res.json()
-                                    js_value = jsonpath.jsonpath(return_json, value)
-                                    if js_value:
-                                        extract_value = {key: js_value[0]}
-                                        write_extract_yaml(extract_value)
-                                except Exception as e:
-                                    logs("返回结果不是json格式，不能使用jsonpath")
+                                js_value1 = jsonpath.jsonpath(return_json, value)
+                                js_value2 = jsonpath.jsonpath(request_json, value)
+                                if js_value1:
+                                    extract_value = {key: js_value1[0]}
+                                    write_extract_yaml(extract_value)
+                                elif js_value2:
+                                    extract_value = {key: js_value2[0]}
+                                    extract_value2 = self.replace_value(extract_value)
+                                    write_extract_yaml(extract_value2)
                     # 断言
                     yq_result = cassinfo['validate']
                     sj_result = return_json

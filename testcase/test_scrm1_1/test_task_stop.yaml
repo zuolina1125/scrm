@@ -1,0 +1,15 @@
+-
+  name: 暂停任务
+  base_url: ${read_config(base,test_scrm)}
+  request:
+    method: POST
+    url: /scrm/cms/task/pause
+    headers:
+      Content-Type: application/json
+      token: ${read_extract_data(token)}
+    json:
+      {
+        taskId: '${read_extract_data(id)}'
+      }
+  validate:
+    - equals: {errorCode: 0}
